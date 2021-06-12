@@ -8,14 +8,19 @@ function App() {
   };
 
   useEffect(()=>{
-    console.log("我第一次被渲染了")
+    const id = setInterval(()=>{
+      console.log('hi')
+    },1000)
+    return()=>{
+      window.clearInterval(id)
+    }
   },[])
-  useEffect(()=>{
-    console.log("n变了我就执行")
-  },[n])
-  useEffect(()=>{
-    console.log("任何东西变化了我都执行")
-  })
+  // useEffect(()=>{
+  //   console.log("n变了我就执行")
+  // },[n])
+  // useEffect(()=>{
+  //   console.log("任何东西变化了我都执行")
+  // })
   return (
    <div>
      n:{n}
